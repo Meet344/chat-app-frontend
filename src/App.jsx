@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 import Chat from "./components/Chat";
-import 'dotenv/config' 
 const URL = "https://chat-app-backend-0cyz.onrender.com"
 
 function App() {

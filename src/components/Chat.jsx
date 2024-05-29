@@ -60,7 +60,8 @@ export default function Chat(props) {
     if (auth) {
       const socket = io(URL, {
         query: {
-          userId: auth._id,
+          // userId: auth._id,
+          userId: auth,
         },
       });
 

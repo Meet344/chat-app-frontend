@@ -27,7 +27,7 @@ export default function Chat(props) {
       if (data.error) {
         throw new Error(data.error);
       }
-      setConversations(data);
+      setConversations(data.data);
     };
 
     getConversations();
@@ -118,7 +118,7 @@ export default function Chat(props) {
         <ul>
           {conversations.map((user) => (
             <li key={user._id} onClick={() => handleUserClick(user)}>
-              {user.fullName}
+              {user.user_name}
             </li>
           ))}
         </ul>

@@ -1,18 +1,20 @@
 import { useState } from "react";
 import "./App.css";
 import Chat from "./components/Chat";
-const URL = "https://chat-app-backend-0cyz.onrender.com"
+// const URL = "https://chat-app-backend-0cyz.onrender.com"
+const URL = "https://clone-satpavidhi.onrender.com"
 
 function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [auth, setAuth] = useState(JSON.parse(localStorage.getItem("chat-user")) || null)
+  const [auth, setAuth] = useState(JSON.parse(localStorage.getItem("")) || null)
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch(`${URL}/api/auth/login`, {
+    const res = await fetch(`${URL}/api/profile/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password }),
+      // body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ contact_no: username, password }),
     });
 
     const data = await res.json();
@@ -21,8 +23,10 @@ function App() {
       throw new Error(data.error);
     }
 
-    localStorage.setItem("chat-user", JSON.stringify(data));
-    setAuth(data)
+    // localStorage.setItem("chat-user", JSON.stringify(data));
+    localStorage.setItem('token', data.data.token)
+    localStorage.setItem('user', data.data.Fields._id)
+    setAuth(data.data.Fields._id)
   };
 
   return (

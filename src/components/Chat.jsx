@@ -16,7 +16,7 @@ export default function Chat(props) {
     const getConversations = async () => {
       // const res = await fetch(`${URL}/api/users`,{
       const res = await fetch(`${URL}/api/profile/userlist`, {
-        method: "GET",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
           // "jwt": localStorage.getItem('chat-user'),

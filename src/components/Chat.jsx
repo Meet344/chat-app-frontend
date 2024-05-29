@@ -20,7 +20,7 @@ export default function Chat(props) {
         headers: {
           "Content-Type": "application/json",
           // "jwt": localStorage.getItem('chat-user'),
-          "Authorization": localStorage.getItem("token"),
+          Authorization: localStorage.getItem("token"),
         },
       });
       const data = await res.json();

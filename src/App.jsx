@@ -2,7 +2,9 @@ import { useState } from "react";
 import "./App.css";
 import Chat from "./components/Chat";
 // const URL = "https://chat-app-backend-0cyz.onrender.com"
-const URL = "https://clone-satpavidhi.onrender.com"
+// const URL = "https://clone-satpavidhi.onrender.com"
+const URL = "https://3.108.65.195.4000";
+
 
 function App() {
   const [username, setUsername] = useState("");

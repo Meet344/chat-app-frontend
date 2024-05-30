@@ -12,6 +12,8 @@ export default function Chat(props) {
   const [input, setInput] = useState("");
   const [conversations, setConversations] = useState([]);
   const [socket, setSocket] = useState(null);
+  const [onlineUsers, setOnlineUsers] = useState([]);
+
 
   useEffect(() => {
     const getConversations = async () => {
@@ -69,10 +71,11 @@ export default function Chat(props) {
 
       setSocket(socket);
 
-      // // socket.on() is used to listen to the events. can be used both on client and server side
-      // socket.on("getOnlineUsers", (users) => {
-      //     setOnlineUsers(users);
-      // });
+      // socket.on() is used to listen to the events. can be used both on client and server side
+      socket.on("getOnlineUsers", (users) => {
+          setOnlineUsers(users);
+          console.log(onlineUsers);
+      });
 
       return () => socket.close();
     } else {

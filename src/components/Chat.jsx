@@ -74,7 +74,7 @@ export default function Chat(props) {
       // socket.on() is used to listen to the events. can be used both on client and server side
       socket.on("getOnlineUsers", (users) => {
           setOnlineUsers(users);
-          console.log(onlineUsers);
+          console.log({online_users: onlineUsers});
       });
 
       return () => socket.close();
@@ -129,6 +129,11 @@ export default function Chat(props) {
         </ul>
       </div>
       <div className="chat-box">
+      {
+        onlineUsers.map((e,index)=>(
+          <p key={index}>{index + 1 }</p>
+        ))
+      }
         {selectedUser ? (
           <>
             <h2>Chat with {selectedUser.fullName}</h2>

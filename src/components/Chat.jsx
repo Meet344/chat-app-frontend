@@ -14,7 +14,7 @@ export default function Chat(props) {
   const [socket, setSocket] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
 
-
+  console.log({online_users: onlineUsers});
   useEffect(() => {
     const getConversations = async () => {
       // const res = await fetch(`${URL}/api/users`,{

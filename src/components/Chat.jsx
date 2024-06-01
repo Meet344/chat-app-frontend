@@ -3,7 +3,8 @@ import io from "socket.io-client";
 
 // const URL = "https://chat-app-backend-0cyz.onrender.com"
 // const URL = "https://clone-satpavidhi.onrender.com";
-const URL = "http://3.108.65.195:4000";
+// const URL = "http://3.108.65.195:4000";
+const URL = "https://saptavidhi-api.onrender.com";
 
 export default function Chat(props) {
   const { auth } = props;
